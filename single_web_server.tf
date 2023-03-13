@@ -1,3 +1,4 @@
+/*
 provider "aws" {
     region = "us-east-2"
 }
@@ -25,4 +26,4 @@ resource "aws_security_group" "instance" {
         to_port   = 8080
         cidr_blocks = ["0.0.0.0/0"]
     }
-}
+}*/
