@@ -16,15 +16,17 @@ terraform {
 resource "aws_s3_bucket" "terraform_state" {
     bucket = "748201447723-terraform-up-and-running-state"
 
+    force_destroy = true
+
     lifecycle {
-        prevent_destroy = true
+        prevent_destroy = false
     }
 }
 
 resource "aws_s3_bucket_versioning" "terraform_state_bucket_versioning" {
     bucket = aws_s3_bucket.terraform_state.id
     versioning_configuration {
-        status = "Enabled"
+        status = "Suspended"
     }
 }
 
